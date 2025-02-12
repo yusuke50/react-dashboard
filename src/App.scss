@@ -1,0 +1,59 @@
+@import './colors';
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.top-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.left-logo {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.right-selector {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.logo-icon {
+  display: block;
+  background-image: url('./assets/diamond.svg');
+  background-size: cover;
+  width: 32px;
+  height: 32px;
+}
+
+.logo-name {
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.selector-icon {
+  display: block;
+  background-image: url('./assets/earth.svg');
+  width: 24px;
+  height: 24px;
+}
+
+.login-form {
+  width: 800px;
+  background-color: $blue-200;
+  border-radius: 12px;
+}
