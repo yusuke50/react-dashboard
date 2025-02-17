@@ -1,4 +1,8 @@
-@import './colors';
+@use './colors';
+
+body {
+  background-color: colors.$background-gray;
+}
 
 #root {
   max-width: 1280px;
@@ -20,7 +24,7 @@
   padding: 0.5rem;
 }
 
-.left-logo {
+.logo-area {
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -54,6 +58,42 @@
 
 .login-form {
   width: 800px;
-  background-color: $blue-200;
+  background-color: colors.$background-stay-pink;
   border-radius: 12px;
+
+  .logo-area {
+    padding: 1rem;
+  }
+}
+
+.form-area {
+  display: flex;
+  flex-flow: row;
+  padding: 1rem;
+}
+
+.left-description {
+  flex: 1;
+  padding: 0.5rem;
+}
+
+.right-form {
+  flex: 1;
+  background-color: colors.$background-1;
+  padding: 0.5rem;
+
+  .form-title {
+    margin: 0.5rem 1rem;
+  }
+}
+
+.desc {
+  display: flex;
+  flex-flow: row;
+
+  
+}
+
+.text-left {
+  text-align: left;
 }
