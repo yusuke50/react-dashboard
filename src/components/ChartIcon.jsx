@@ -1,4 +1,4 @@
-const ChartIcon = () => {
+const ChartIcon = ({ stroke: Stroke }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
@@ -9,17 +9,17 @@ const ChartIcon = () => {
     >
       <path
         d='M3 3V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H21'
-        stroke='black'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        stroke={Stroke}
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
       <path
         d='M19 9L14 14L10 10L7 13'
-        stroke='black'
-        stroke-width='2'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        stroke={Stroke}
+        strokeWidth='2'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </svg>
   );
