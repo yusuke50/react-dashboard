@@ -1,3 +1,4 @@
+import './index.css';
 import './App.scss';
 import Logo from './components/Logo';
 import DescriptionItem from './components/DescriptionItem';
