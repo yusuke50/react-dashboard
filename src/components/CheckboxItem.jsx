@@ -1,13 +1,15 @@
-const CheckboxItem = ({
-  value: Value,
-  id: inputId,
-  for: For,
-  label: Label,
-}) => {
+const CheckboxItem = ({ value, id, name, checked, onChange, label }) => {
   return (
     <div className='check-box'>
-      <input type='checkbox' value={Value} id={inputId} />
-      <label htmlFor={For}>{Label}</label>
+      <input
+        type='checkbox'
+        value={value}
+        id={id}
+        name={name}
+        checked={checked}
+        onChange={onChange}
+      />
+      <label htmlFor={id}>{label}</label>
     </div>
   );
 };

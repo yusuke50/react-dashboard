@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router';
 import './index.css';
 import './App.scss';
 import Logo from './components/Logo';
@@ -5,10 +6,14 @@ import DescriptionItem from './components/DescriptionItem';
 import GaugeIcon from './components/GaugeIcon';
 import ChartIcon from './components/ChartIcon';
 import SystemIcon from './components/SystemIcon';
-import InputItem from './components/InputItem';
-import CheckboxItem from './components/CheckboxItem';
+import LoginForm from './components/LoginForm';
 
 function App() {
+  const navigate = useNavigate();
+
+  const handleLoginSuccess = () => {
+    navigate('/dashboard');
+  };
   return (
     <>
       <div className='top-header'>
@@ -49,30 +54,8 @@ function App() {
               />
             </div>
           </div>
-          <div className='right-form'>
-            <h3 className='form-title'>Login</h3>
-            <div className='form-area'>
-              <form>
-                <InputItem type='text' placeholder='username' />
-                <InputItem type='password' placeholder='password' />
-                <CheckboxItem
-                  value='remember'
-                  id='rememberMe'
-                  for='rememberMe'
-                  label='Remember Me'
-                />
-                <CheckboxItem
-                  value='security'
-                  id='secureLogin'
-                  for='secureLogin'
-                  label='Secure Login'
-                />
-              </form>
-            </div>
-            <div className='login-button'>
-              <button>Login</button>
-            </div>
-          </div>
+
+          <LoginForm onSuccess={handleLoginSuccess} />
         </div>
       </div>
     </>
