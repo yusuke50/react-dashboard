@@ -18,10 +18,8 @@ function App() {
     <>
       <div className='top-header'>
         <div>
-          <div className='logo-area'>
-            <Logo />
-          </div>
-          <div className='right-selector'>
+          <Logo />
+          <div className='right-corner'>
             <div className='selector-icon'></div>
           </div>
         </div>
@@ -33,8 +31,8 @@ function App() {
         <div className='form-main'>
           <div className='left-description'>
             <div className='left-intro'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in
-              purus eu nibh porttitor semper.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus eu nibh
+              porttitor semper.
             </div>
             <div className='sub-description'>
               <DescriptionItem

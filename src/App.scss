@@ -41,11 +41,15 @@ body {
   margin: 0.5rem;
 }
 
-.right-selector {
+.right-corner {
   display: flex;
   flex-flow: row;
   align-items: center;
   margin: 0.5rem;
+}
+
+.right-corner-icon {
+  margin-left: 0.5rem;
 }
 
 .logo-icon {
@@ -64,6 +68,14 @@ body {
 .selector-icon {
   display: block;
   background-image: url('./assets/earth.svg');
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
+
+.logout-icon {
+  display: block;
+  background-image: url('./assets/logout.svg');
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -177,6 +189,7 @@ input[type='checkbox']:checked {
 
 label {
   display: inline-block;
+  cursor: pointer;
 }
 
 .login-button {
@@ -191,5 +204,15 @@ label {
     border-radius: 6px;
     padding: 0.5rem 0.25rem;
     box-shadow: 0 0.125rem colors.$checkbox-back;
+    cursor: pointer;
   }
+}
+
+.main-wrapper {
+  background-color: colors.$background-white;
+  position: relative;
+  margin-top: 50px;
+  height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
 }
