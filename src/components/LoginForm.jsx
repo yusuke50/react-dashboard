@@ -88,7 +88,7 @@ const LoginForm = ({ onSuccess }) => {
             label='Secure Login'
           />
 
-          {errors.form && <div className='error'>{errors.form}</div>}
+          {errors.form && <div className='error error-msg'>{errors.form}</div>}
 
           <div className='login-button'>
             <button type='submit' disabled={isLoading}>

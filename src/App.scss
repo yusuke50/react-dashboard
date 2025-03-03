@@ -41,7 +41,7 @@ body {
   margin: 0.5rem;
 }
 
-.right-corner {
+.right-top-header {
   display: flex;
   flex-flow: row;
   align-items: center;
@@ -215,4 +215,7 @@ label {
   height: 100vh;
   max-height: 100vh;
   overflow: hidden;
+}
+.error-msg {
+  color: colors.$color-error;
 }
