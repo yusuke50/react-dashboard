@@ -1,5 +1,7 @@
 import { useNavigate } from 'react-router';
 import Logo from './components/Logo';
+import LeftNav from './components/LeftNav';
+import RightContent from './components/RightContent';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -22,7 +24,8 @@ const Dashboard = () => {
         </div>
       </div>
       <div className='main-wrapper'>
-        <h1>Dashboard</h1>
+        <LeftNav />
+        <RightContent />
       </div>
     </>
   );
