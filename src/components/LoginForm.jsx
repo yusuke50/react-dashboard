@@ -14,10 +14,18 @@ const LoginForm = ({ onSuccess }) => {
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [name]: type === 'checked' ? checked : value,
+      [name]: value,
+    }));
+  };
+
+  const handleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: checked,
     }));
   };
 
@@ -36,6 +44,8 @@ const LoginForm = ({ onSuccess }) => {
       const user = await loginUser({
         username: formData.username,
         password: formData.password,
+        rememberMe: formData.rememberMe,
+        secureLogin: formData.secureLogin,
       });
 
       onSuccess(user);
@@ -76,7 +86,7 @@ const LoginForm = ({ onSuccess }) => {
             id='rememberMe'
             name='rememberMe'
             checked={formData.rememberMe}
-            onChange={handleChange}
+            onChange={handleCheckboxChange}
             label='Remember Me'
           />
           <CheckboxItem
@@ -84,7 +94,7 @@ const LoginForm = ({ onSuccess }) => {
             id='secureLogin'
             name='secureLogin'
             checked={formData.secureLogin}
-            onChange={handleChange}
+            onChange={handleCheckboxChange}
             label='Secure Login'
           />
 

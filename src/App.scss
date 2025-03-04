@@ -108,7 +108,7 @@ body {
 
 .right-form {
   flex: 1;
-  background-color: colors.$background-1;
+  background-color: colors.$background-gray;
   padding: 0.5rem;
   display: flex;
   flex-flow: column;
@@ -184,7 +184,7 @@ input[type='checkbox'] {
 
 input[type='checkbox']:checked {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
-  background-color: colors.$checkbox-back;
+  background-color: colors.$title-color;
 }
 
 label {
@@ -203,7 +203,7 @@ label {
     border: none;
     border-radius: 6px;
     padding: 0.5rem 0.25rem;
-    box-shadow: 0 0.125rem colors.$checkbox-back;
+    box-shadow: 0 0.125rem colors.$title-color;
     cursor: pointer;
   }
 }
@@ -228,73 +228,39 @@ label {
   max-width: 200px;
   width: 200px;
   height: 100%;
-  background-color: colors.$background-gray-light;
+  background-color: colors.$background-gray;
+
+  .submenu,
+  .thirdmenu {
+    padding-left: 2rem;
+  }
 }
 
-.menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-item {
-  position: relative;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  color: #011448; // Main text color
-  transition: background-color 0.3s;
+.nav-link {
+  display: flex;
+  margin-left: 0.25rem;
+  margin-bottom: 0.75rem;
 
   &:hover {
-    background-color: colors.$background-gray; // Change background on hover
+    color: colors.$title-color;
   }
-}
 
-.submenu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: none; // Hide submenu by default
-  padding-left: 1rem; // Indent submenu
-
-  .submenu-item {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    color: #011448; // Submenu text color
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: colors.$background-gray; // Change background on hover
-    }
-
-    .thirdmenu {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: none; // Hide third-level menu by default
-      padding-left: 1rem; // Indent third-level menu
-
-      .thirdmenu-item {
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        color: #011448; // Third-level menu text color
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: colors.$background-gray; // Change background on hover
-        }
-      }
-    }
+  .nav-link-main {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
   }
-}
 
-// Show submenu on hover
-.menu-item:hover .submenu {
-  display: block;
-}
+  .icon {
+    margin-right: 0.5rem;
+    width: 24px;
+  }
 
-// Show third-level menu on hover
-.submenu-item:hover .thirdmenu {
-  display: block;
+  .dropdown-icon {
+    margin-left: auto;
+    margin-right: 0.25rem;
+    width: 24px;
+  }
 }
 
 .right-content {
