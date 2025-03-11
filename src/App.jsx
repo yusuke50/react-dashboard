@@ -8,23 +8,17 @@ import GaugeIcon from './components/GaugeIcon';
 import ChartIcon from './components/ChartIcon';
 import SystemIcon from './components/SystemIcon';
 import LoginForm from './components/LoginForm';
+import TopHeader from './components/TopHeader';
 
 function App() {
   const navigate = useNavigate();
-
   const handleLoginSuccess = () => {
     navigate('/frame');
   };
   return (
     <>
-      <div className='top-header'>
-        <div>
-          <Logo />
-          <div className='right-top-header'>
-            <div className='selector-icon'></div>
-          </div>
-        </div>
-      </div>
+      <TopHeader />
+
       <div className='login-form'>
         <div className='logo-area'>
           <Logo />
@@ -32,8 +26,8 @@ function App() {
         <div className='form-main'>
           <div className='left-description'>
             <div className='left-intro'>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in
-              purus eu nibh porttitor semper.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla in purus eu nibh
+              porttitor semper.
             </div>
             <div className='sub-description'>
               <DescriptionItem
