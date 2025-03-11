@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router';
 import './index.css';
 import './App.scss';
@@ -12,7 +13,7 @@ function App() {
   const navigate = useNavigate();
 
   const handleLoginSuccess = () => {
-    navigate('/dashboard');
+    navigate('/frame');
   };
   return (
     <>

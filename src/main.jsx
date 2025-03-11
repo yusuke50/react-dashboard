@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
 import App from './App.jsx';
-import Dashboard from './Dashboard.jsx';
+import Frame from './Frame.jsx';
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
@@ -17,7 +17,9 @@ createRoot(document.getElementById('root')).render(
         }
       />
 
-      <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/frame' element={<Frame />} />
+
+      <Route path='*' element={<Navigate to='/' replace />} />
     </Routes>
   </BrowserRouter>
 );
