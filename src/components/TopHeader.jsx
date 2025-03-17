@@ -9,7 +9,8 @@ const TopHeader = ({ logout }) => {
     navigate('/');
   };
 
-  const [isMultipleLanguagesVisible, setMultipleLanguagesVisible] = useState(false);
+  const [isMultipleLanguagesVisible, setMultipleLanguagesVisible] =
+    useState(false);
 
   const toggleMultipleLanguages = () => {
     setMultipleLanguagesVisible(!isMultipleLanguagesVisible);
@@ -27,7 +28,12 @@ const TopHeader = ({ logout }) => {
             onClick={toggleMultipleLanguages}
           ></button>
           {isMultipleLanguagesVisible && <MultipleLanguages />}
-          {logout && <div className='right-corner-icon logout-icon' onClick={handleLogout}></div>}
+          {logout && (
+            <div
+              className='right-corner-icon logout-icon'
+              onClick={handleLogout}
+            ></div>
+          )}
         </div>
       </div>
     </div>

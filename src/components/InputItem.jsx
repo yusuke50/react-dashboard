@@ -1,3 +1,4 @@
+import { Input } from 'antd';
 const InputItem = ({
   type,
   placeholder,
@@ -9,16 +10,18 @@ const InputItem = ({
   required,
 }) => {
   return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      value={value}
-      onChange={onChange}
-      name={name}
-      pattern={pattern}
-      title={title}
-      required={required}
-    />
+    <div className='input-group'>
+      <Input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        name={name}
+        pattern={pattern}
+        title={title}
+        required={required}
+      />
+    </div>
   );
 };
 
