@@ -222,6 +222,7 @@ button {
 
 .ant-menu {
   background: colors.$background-gray;
+  border: none;
 }
 
 .right-content {
@@ -243,10 +244,7 @@ button {
     padding-left: 12px;
   }
 
-  .ant-tabs-nav-list
-    .ant-tabs-tab:first-child
-    .ant-tabs-tab-btn
-    .ant-tabs-tab-icon {
+  .ant-tabs-nav-list .ant-tabs-tab:first-child .ant-tabs-tab-btn .ant-tabs-tab-icon {
     visibility: hidden;
   }
 }

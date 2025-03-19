@@ -4,27 +4,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons';
+import Dashboard from '../Pages/Dashboard';
+import Ultrices from '../Pages/Ultrices';
+import Cursus from '../Pages/Cursus';
+
 library.add(fas, faTwitter, faFontAwesome);
 
 const RightContent = () => {
   const items = [
     {
       label: 'Dashboard',
-      key: 1,
+      key: '/dashboard',
       icon: <FontAwesomeIcon icon='fa-solid fa-xmark' fixedWidth />,
-      children: 'Tab 1 content',
+      children: <Dashboard />,
     },
     {
-      label: 'Tab 2',
-      key: 2,
+      label: 'Ultrices',
+      key: '/ultrices',
       icon: <FontAwesomeIcon icon='fa-solid fa-xmark' fixedWidth />,
-      children: 'Tab 2 content',
+      children: <Ultrices />,
     },
     {
-      label: 'Tab 3',
-      key: 3,
+      label: 'Cursus',
+      key: '/cursus',
       icon: <FontAwesomeIcon icon='fa-solid fa-xmark' fixedWidth />,
-      children: 'Tab 3 content',
+      children: <Cursus />,
     },
   ];
 
@@ -33,7 +37,6 @@ const RightContent = () => {
       <div className='tab-area'>
         <Tabs type='card' items={items} />
       </div>
-      <div className='content-area'></div>
     </div>
   );
 };
