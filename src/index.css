@@ -1,16 +1,34 @@
 @import 'tailwindcss';
+@plugin "daisyui";
+@plugin 'daisyui/theme' {
+  themes: all;
+  name: 'skz';
+  default: true;
+  prefersdark: false;
+  color-scheme: light;
 
-@plugin 'flowbite/plugin';
-@source '../node_modules/flowbite/';
+  --color-base-100: #ffd2df;
+  --color-base-200: #f9aeba;
+  --color-base-300: #df929e;
+  --color-base-400: #c27884;
+  --color-base-500: #a65e6b;
+  --color-base-600: #8a4653;
+  --color-base-700: #6f2e3c;
+  --color-base-800: #551627;
+  --color-base-900: #3b0011;
 
-@theme {
-  --color-theme-100: #ffd2df;
-  --color-theme-200: #f9aeba;
-  --color-theme-300: #df929e;
-  --color-theme-400: #c27884;
-  --color-theme-500: #a65e6b;
-  --color-theme-600: #8a4653;
-  --color-theme-700: #6f2e3c;
-  --color-theme-800: #551627;
-  --color-theme-900: #3b0011;
+  --color-primary: #a65e6b;
+  --color-primary-content: #fff;
+  --color-secondary: #5e91a6;
+  --color-secondary-content: #000;
+  --color-accent: #5ea66b;
+  --color-accent-content: #000;
+  --color-neutral: #51484a;
+  --color-neutral-content: #fff;
+  --color-success: #5ea683;
+  --color-success-content: #000;
+  --color-warning: oklch(80% 0.25 80);
+  --color-warning-content: oklch(20% 0.05 80);
+  --color-error: #f05955;
+  --color-error-content: #000;
 }
