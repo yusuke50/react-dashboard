@@ -7,6 +7,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [],
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
 };

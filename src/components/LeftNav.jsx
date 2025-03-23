@@ -8,12 +8,12 @@ const LeftNav = () => {
     thirdmenu3: false,
   });
 
-  const toggleMenu = (menu) => {
+  /* const toggleMenu = (menu) => {
     setMenuVisibility((prev) => ({
       ...prev,
       [menu]: !prev[menu],
     }));
-  };
+  }; */
 
   return (
     <div className='left-nav'>
@@ -70,7 +70,11 @@ const LeftNav = () => {
                 {menuVisibility.thirdmenu3 && (
                   <ul className='thirdmenu'>
                     <li className='thirdmenu-item'>
-                      <NavLink href='#' icon='fa-solid fa-barcode' label='Duis' />
+                      <NavLink
+                        href='#'
+                        icon='fa-solid fa-barcode'
+                        label='Duis'
+                      />
                     </li>
                     <li className='thirdmenu-item'>
                       <NavLink href='#' icon='fa-solid fa-gear' label='Idmi' />

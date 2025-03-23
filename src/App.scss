@@ -145,12 +145,12 @@ button {
     margin-right: 1rem;
 
     > svg {
-      stroke: colors.$title-color;
+      stroke: colors.$color-theme-500;
     }
   }
 
   .desc-title {
-    color: colors.$title-color;
+    color: colors.$color-theme-500;
   }
 }
 
@@ -162,46 +162,10 @@ button {
   padding: 1rem 1.5rem;
 }
 
-input {
-  display: block;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  appearance: none;
-  background-clip: padding-box;
-  border: 1px solid colors.$border-gray;
-  border-radius: variables.$border-radius;
-  margin-bottom: 0.75rem;
-  box-sizing: border-box;
-  background-color: colors.$background-white;
-}
-
 .check-box {
   display: block;
   padding-left: 1.5em;
   margin-bottom: 0.75rem;
-}
-
-input[type='checkbox'] {
-  float: left;
-  width: 1em;
-  height: 1em;
-  margin-top: 0.25em;
-  margin-left: -1.5em;
-  vertical-align: top;
-  appearance: none;
-  background-repeat: no-repeat;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
-  background-position: center;
-  background-size: contain;
-  background-color: white;
-}
-
-input[type='checkbox']:checked {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
-  background-color: colors.$title-color;
 }
 
 label {
@@ -220,7 +184,7 @@ label {
     border: none;
     border-radius: variables.$border-radius;
     padding: 0.5rem 0.25rem;
-    box-shadow: 0 0.125rem colors.$title-color;
+    box-shadow: 0 0.125rem colors.$color-theme-500;
     cursor: pointer;
   }
 }
@@ -259,7 +223,7 @@ label {
   margin-bottom: 0.75rem;
 
   &:hover {
-    color: colors.$title-color;
+    color: colors.$color-theme-500;
   }
 
   .nav-link-main {

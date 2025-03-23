@@ -2,8 +2,71 @@ $background-white: white;
 $background-gray: #fef4f2;
 $background-stay-pink: #ffe3e8;
 
-$title-color: #aa626f;
-
 $border-gray: #d0dae3;
 
 $color-error: #f05955;
+
+$color-theme-100: #ffd2df;
+$color-theme-200: #f9aeba;
+$color-theme-300: #df929e;
+$color-theme-400: #c27884;
+$color-theme-500: #a65e6b;
+$color-theme-600: #8a4653;
+$color-theme-700: #6f2e3c;
+$color-theme-800: #551627;
+$color-theme-900: #3b0011;
+
+.text-theme-100 {
+  color: $color-theme-100;
+}
+.text-theme-200 {
+  color: $color-theme-200;
+}
+.text-theme-300 {
+  color: $color-theme-300;
+}
+.text-theme-400 {
+  color: $color-theme-400;
+}
+.text-theme-500 {
+  color: $color-theme-500;
+}
+.text-theme-600 {
+  color: $color-theme-600;
+}
+.text-theme-700 {
+  color: $color-theme-700;
+}
+.text-theme-800 {
+  color: $color-theme-800;
+}
+.text-theme-900 {
+  color: $color-theme-900;
+}
+.bg-theme-100 {
+  background-color: $color-theme-100;
+}
+.bg-theme-200 {
+  background-color: $color-theme-200;
+}
+.bg-theme-300 {
+  background-color: $color-theme-300;
+}
+.bg-theme-400 {
+  background-color: $color-theme-400;
+}
+.bg-theme-500 {
+  background-color: $color-theme-500;
+}
+.bg-theme-600 {
+  background-color: $color-theme-600;
+}
+.bg-theme-700 {
+  background-color: $color-theme-700;
+}
+.bg-theme-800 {
+  background-color: $color-theme-800;
+}
+.bg-theme-900 {
+  background-color: $color-theme-900;
+}
