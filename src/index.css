@@ -31,4 +31,6 @@
   --color-warning-content: oklch(20% 0.05 80);
   --color-error: #f05955;
   --color-error-content: #000;
+
+  --tab-border-colors: #d0dae3;
 }
