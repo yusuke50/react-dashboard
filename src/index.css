@@ -32,5 +32,5 @@
   --color-error: #f05955;
   --color-error-content: #000;
 
-  --tab-border-colors: #d0dae3;
+  --tab-border-color: var(--color-base-100);
 }

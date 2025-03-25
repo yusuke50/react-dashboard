@@ -10,14 +10,13 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   position: relative;
   max-width: 100dvw;
   width: 100dvw;
   max-height: 100dvh;
   height: 100dvh;
   overflow: hidden;
-  color: #011448;
+  color: colors.$color-black;
 }
 
 .top-header {
@@ -55,8 +54,9 @@ body {
 
 .logo-icon {
   display: block;
-  background-image: url('./assets/diamond.svg');
-  background-size: cover;
+  mask-image: url('./assets/diamond.svg');
+  mask-size: cover;
+  background-color: colors.$color-black;
   width: 32px;
   height: 32px;
 }
@@ -64,11 +64,14 @@ body {
 .logo-name {
   font-size: larger;
   font-weight: bolder;
+  color: colors.$color-black;
 }
 
 .selector-icon {
   display: block;
-  background-image: url('./assets/earth.svg');
+  mask-image: url('./assets/earth.svg');
+  mask-size: cover;
+  background-color: colors.$color-black;
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -79,7 +82,7 @@ body {
   top: 60px;
   right: 0.5rem;
   width: 200px;
-  border: 1px solid colors.$border-gray;
+  border: 1px solid colors.$color-theme-100;
   border-radius: variables.$border-radius;
   padding: 0.5rem;
   background-color: colors.$background-white;
@@ -89,7 +92,9 @@ body {
 
 .logout-icon {
   display: block;
-  background-image: url('./assets/logout.svg');
+  mask-image: url('./assets/logout.svg');
+  mask-size: contain;
+  background-color: colors.$color-black;
   width: 24px;
   height: 24px;
   cursor: pointer;
@@ -204,6 +209,6 @@ body {
   background-color: colors.$background-gray;
 }
 
-.border-gray {
-  border-color: colors.$border-gray;
+.tab {
+  --tab-border-color: var(--color-base-100);
 }

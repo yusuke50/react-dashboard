@@ -29,7 +29,7 @@ const TabDetail = ({ name, checked, label, icon }) => {
           </div>
         )}
       </label>
-      <div className='tab-content border-gray p-6'>
+      <div className='tab-content border-base-100 p-6'>
         {PageComponent && <PageComponent />}
       </div>
     </>
