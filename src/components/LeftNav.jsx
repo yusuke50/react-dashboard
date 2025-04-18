@@ -4,11 +4,15 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons';
 library.add(fas, faTwitter, faFontAwesome);
 
-const LeftNav = () => {
+const LeftNav = ({ addTab }) => {
+  const handleItemClick = (item) => {
+    addTab(item);
+  };
+
   return (
     <ul className='menu bg-background-gray w-56'>
       <li>
-        <a>
+        <a onClick={() => handleItemClick('Dashboard')}>
           <FontAwesomeIcon icon='fa-solid fa-house' fixedWidth />
           <span>Dashboard</span>
         </a>
@@ -21,12 +25,12 @@ const LeftNav = () => {
           </summary>
           <ul>
             <li>
-              <a>
+              <a onClick={() => handleItemClick('Ipsum')}>
                 <span>Ipsum</span>
               </a>
             </li>
             <li>
-              <a>
+              <a onClick={() => handleItemClick('Dolor')}>
                 <span>Dolor</span>
               </a>
             </li>
@@ -37,12 +41,12 @@ const LeftNav = () => {
                 </summary>
                 <ul>
                   <li>
-                    <a>
+                    <a onClick={() => handleItemClick('Sit')}>
                       <span>Sit</span>
                     </a>
                   </li>
                   <li>
-                    <a>
+                    <a onClick={() => handleItemClick('Sed')}>
                       <span>Sed</span>
                     </a>
                   </li>
@@ -60,17 +64,17 @@ const LeftNav = () => {
           </summary>
           <ul>
             <li>
-              <a>
+              <a onClick={() => handleItemClick('Vel')}>
                 <span>Vel</span>
               </a>
             </li>
             <li>
-              <a>
+              <a onClick={() => handleItemClick('Vehicula')}>
                 <span>Vehicula</span>
               </a>
             </li>
             <li>
-              <a>
+              <a onClick={() => handleItemClick('Vrna')}>
                 <span>Vrna</span>
               </a>
             </li>
@@ -78,13 +82,13 @@ const LeftNav = () => {
         </details>
       </li>
       <li>
-        <a>
+        <a onClick={() => handleItemClick('Ultrices')}>
           <FontAwesomeIcon icon='fa-solid fa-fire' fixedWidth />
           <span>Ultrices</span>
         </a>
       </li>
       <li>
-        <a>
+        <a onClick={() => handleItemClick('Cursus')}>
           <FontAwesomeIcon icon='fa-solid fa-tree' fixedWidth />
           <span>Cursus</span>
         </a>
