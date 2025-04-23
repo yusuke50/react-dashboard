@@ -5,35 +5,58 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faFontAwesome } from '@fortawesome/free-brands-svg-icons';
 library.add(fas, faTwitter, faFontAwesome);
 
+import Dashboard from '../Pages/Dashboard';
+import Ipsum from '../Pages/Ipsum';
+import Dolor from '../Pages/Dolor';
+import Sit from '../Pages/Sit';
+import Sed from '../Pages/Sed';
+import Vel from '../Pages/Vel';
+import Vehicula from '../Pages/Vehicula';
+import Vrna from '../Pages/Vrna';
+import Ultrices from '../Pages/Ultrices';
+import Cursus from '../Pages/Cursus';
+
+const componentMapping = {
+  dashboard: Dashboard,
+  ipsum: Ipsum,
+  dolor: Dolor,
+  sit: Sit,
+  sed: Sed,
+  vel: Vel,
+  vehicula: Vehicula,
+  vrna: Vrna,
+  ultrices: Ultrices,
+  cursus: Cursus,
+};
 const items = [
   {
-    key: 'dash',
+    key: 'dashboard',
     label: 'Dashboard',
     icon: <FontAwesomeIcon icon='fa-solid fa-house' fixedWidth />,
   },
   {
-    key: 'sub2',
+    key: 'lorem',
     label: 'Lorem',
     icon: <FontAwesomeIcon icon='fa-solid fa-dog' fixedWidth />,
     children: [
       {
-        key: '5',
+        key: 'ipsum',
         label: 'Ipsum',
       },
       {
-        key: '6',
+        key: 'dolor',
         label: 'Dolor',
       },
       {
-        key: 'sub3',
+        key: 'amet',
         label: 'Amet',
         children: [
           {
-            key: '7',
+            key: 'sit',
             label: 'Sit',
           },
           {
-            key: '8',
+            key: 'sed',
             label: 'Sed',
           },
         ],
@@ -41,26 +64,26 @@ const items = [
     ],
   },
   {
-    key: 'sub4',
+    key: 'consectetur',
     label: 'Consectetur',
     icon: <FontAwesomeIcon icon='fa-solid fa-star' fixedWidth />,
     children: [
       {
-        key: '9',
+        key: 'vel',
         label: 'Vel',
       },
       {
-        key: '10',
+        key: 'vehicula',
         label: 'Vehicula ',
       },
       {
-        key: '11',
+        key: 'vrna',
         label: 'Vrna',
       },
     ],
   },
   {
-    key: 'fire',
+    key: 'ultrices',
     label: 'Ultrices',
     icon: <FontAwesomeIcon icon='fa-solid fa-fire' fixedWidth />,
   },
@@ -71,8 +94,72 @@ const items = [
   },
 ];
 
-const LeftNav = () => {
-  return <Menu style={{ width: 250 }} mode='inline' items={items} />;
+const LeftNav = ({ addTab, removeTab }) => {
+  const capitalizeFirstChar = (str) => {
+    if (!str) {
+      return str;
+    }
+    const [first, ...rest] = str;
+    return first.toUpperCase() + rest.join('');
+  };
+
+  const handleMenuClick = (key) => {
+    const Component = componentMapping[key];
+
+    if (!Component) {
+      return;
+    }
+
+    const tabObj = {
+      label: capitalizeFirstChar(key),
+      key: `/${key}`,
+      children: <Component />,
+    };
+
+    if (key != 'dashboard') {
+      tabObj.icon = (
+        <FontAwesomeIcon
+          icon='fa-solid fa-xmark'
+          fixedWidth
+          onClick={() => removeTab(tabObj.key)}
+        />
+      );
+    }
+    addTab(tabObj);
+  };
+
+  return (
+    <Menu
+      style={{ width: 250 }}
+      mode='inline'
+      items={items.map((item) => ({
+        ...item,
+        onClick: () => {
+          if (item.children) {
+            return;
+          }
+          handleMenuClick(item.key);
+        },
+        children: item.children
+          ? item.children.map((child) => ({
+              ...child,
+              onClick: () => {
+                if (child.children) {
+                  return;
+                }
+                handleMenuClick(child.key);
+              },
+              children: child.children
+                ? child.children.map((grandchild) => ({
+                    ...grandchild,
+                    onClick: () => handleMenuClick(grandchild.key),
+                  }))
+                : undefined,
+            }))
+          : undefined,
+      }))}
+    />
+  );
 };
 
 export default LeftNav;
