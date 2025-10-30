@@ -1,3 +1,14 @@
+type InputItemProps = {
+  type?: string;
+  placeholder?: string;
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  name?: string;
+  pattern?: string;
+  title?: string;
+  required?: boolean;
+};
+
 const InputItem = ({
   type,
   placeholder,
@@ -7,7 +18,7 @@ const InputItem = ({
   pattern,
   title,
   required,
-}) => {
+}: InputItemProps) => {
   return (
     <input
       className='input input-primary mb-2'

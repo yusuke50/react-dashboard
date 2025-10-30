@@ -1,4 +1,13 @@
-const CheckboxItem = ({ value, id, name, checked, onChange, label }) => {
+type CheckboxItemProps = {
+  value?: string;
+  id?: string;
+  name?: string;
+  checked?: boolean;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  label?: string;
+};
+
+const CheckboxItem = ({ value, id, name, checked, onChange, label }: CheckboxItemProps) => {
   return (
     <div className='flex items-center mb-4'>
       <input

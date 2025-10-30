@@ -3,7 +3,23 @@ import { loginUser } from '../services/api';
 import InputItem from './InputItem';
 import CheckboxItem from './CheckboxItem';
 
-const LoginForm = ({ onSuccess }) => {
+type User = {
+  id: number;
+  username: string;
+  name: string;
+};
+
+type FormErrors = {
+  form?: string;
+  username?: string;
+  password?: string;
+};
+
+type Props = {
+  onSuccess: (user: User) => void;
+};
+
+const LoginForm = ({ onSuccess }: Props) => {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
@@ -11,9 +27,9 @@ const LoginForm = ({ onSuccess }) => {
     secureLogin: false,
   });
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState<FormErrors>({});
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -21,7 +37,7 @@ const LoginForm = ({ onSuccess }) => {
     }));
   };
 
-  const handleCheckboxChange = (e) => {
+  const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -29,7 +45,7 @@ const LoginForm = ({ onSuccess }) => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!formData.username || !formData.password) {
@@ -38,7 +54,7 @@ const LoginForm = ({ onSuccess }) => {
     }
 
     setIsLoading(true);
-    setErrors('');
+    setErrors({});
 
     try {
       const user = await loginUser({

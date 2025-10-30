@@ -1,10 +1,12 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router';
-import App from './App.jsx';
+import App from './App.js';
 import Frame from './Frame.jsx';
 
-createRoot(document.getElementById('root')).render(
+const rootDiv = document.getElementById('root') as HTMLDivElement;
+
+createRoot(rootDiv).render(
   <BrowserRouter>
     <Routes>
       <Route
